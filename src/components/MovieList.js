@@ -8,7 +8,7 @@ export default function MovieList(props) {
 
 
     <div className='movies'>
-    {    props.movies.map((movie,index)=>(
+    {    props.movies && props.movies.map((movie,index)=>(
       <div >
         <img src={movie.Poster} alt="movieImg" />
 
