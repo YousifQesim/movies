@@ -1,13 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect,useState} from 'react';
 import './App.css';
 import MovieList from './components/MovieList';
 
 function App() {
+
+
+  const [movies, setMovies] = useState([]);
   const getrequest = async (second) => { 
   
-    const url="http://www.omdbapi.com/?i=tt3896198&apikey=c80831ef"
+    const url="http://www.omdbapi.com/?s=star wars&apikey=c80831ef"
   const response=await fetch(url);
   const responsJson=await response.json();
+setMovies(responsJson.Search)
    }
 
 useEffect(() => {
@@ -16,7 +20,7 @@ useEffect(() => {
 },);
   return (
     <div className="App">
-      <MovieList/>
+      <MovieList movies={movies}/>
     </div>
   );
 }
