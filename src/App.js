@@ -26,7 +26,10 @@ const addfav=(movie)=>{
 const favoratiess=[...fav,movie];
 setfav(favoratiess);
 }
-console.log(fav)
+const removeFav=(movie)=>{
+  const remove=fav.filter((item)=>item.imdbID!==movie.imdbID)
+  setfav(remove);
+}
 
   return (
   
@@ -38,7 +41,7 @@ console.log(fav)
       <MovieList movies={movies} addfav={addfav}/>
       <div>
         <PageHeading heading={"favoraties"}/>
-      <Favoraties fav={fav}/> 
+      <Favoraties fav={fav} removeFav={removeFav}/> 
       </div>
     </div>
   );

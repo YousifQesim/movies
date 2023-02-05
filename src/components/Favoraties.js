@@ -8,7 +8,7 @@ export default function Favoraties(props) {
     
     <div className='movies' >
     {    props.fav && props.fav.map((movie,index)=>(
-      <div className='iteams' onClick={()=>props.addfav(movie)}>
+      <div className='iteams' onClick={()=>props.removeFav(movie)}>
         <img id='img' src={movie.Poster} alt="movieImg" />
         
         
