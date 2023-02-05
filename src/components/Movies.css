@@ -10,8 +10,21 @@ img{
   overflow-x: auto;
   flex-wrap: nowrap;
 }
-
 .movies::-webkit-scrollbar{
-display: none;
+  display: none;
   
 }
+.movies img{
+  height: 200px;
+  width: 200px;
+  border-radius: 8px;
+  transition:  all 0.5s;
+
+}
+.movies img:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+transition:  all 0.5s;
+}
+
+

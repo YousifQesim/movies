@@ -4,3 +4,6 @@
   align-items: center;
   height: 40px;
 }
+h1{
+  text-align: start;
+}

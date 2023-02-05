@@ -4,7 +4,9 @@ export default function PageHeading(props) {
   return (
     <div>
       <h1>
-    {    props.heading}
+    {
+      props.heading
+    }
       </h1>
 
     </div>
