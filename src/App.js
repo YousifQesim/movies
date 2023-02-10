@@ -1,49 +1,41 @@
-import { useEffect,useState} from 'react';
+import { useEffect,useContext} from 'react';
 import './App.css';
-import MovieList from './components/MovieList';
-import PageHeading from './components/PageHeading';
-import SearchBar from './components/SearchBar';
-import Favoraties from './components/Favoraties';
+import Navbar from './components/Navbar';
+import Home from './Pages/Home';
+import WatchLater from './Pages/WatchLater';
+import Usecontext from '../src/hooks/Usecontext';
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
+import { context } from '../src/hooks/Usecontext';
+
 function App() {
-
-
-  const [movies, setMovies] = useState([]);
-  const [fav, setfav] = useState([]);
-  const [searchValue, setsearchValue] = useState('');
-  const getrequest = async (second) => { 
-  
-    const url=`http://www.omdbapi.com/?s=${searchValue? searchValue.length>0:'star wars'}&apikey=c80831ef`
-  const response=await fetch(url);
-  const responsJson=await response.json();
-setMovies(responsJson.Search)
-   }
-
-useEffect(() => {
-  getrequest();
-
-},[searchValue]);
-const addfav=(movie)=>{
-const favoratiess=[...fav,movie];
-setfav(favoratiess);
-}
-const removeFav=(movie)=>{
-  const remove=fav.filter((item)=>item.imdbID!==movie.imdbID)
-  setfav(remove);
-}
-
   return (
+    <Usecontext>
+
+<div>
   
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/WatchLater" element={<WatchLater/>} / >
+      </Routes>
+    </Router>
+  
+
+  </div>
+{/*   
     <div className="App">
+        <Home  />
       <div className='heading'>
         <PageHeading heading={"Movies"}/>
-        <SearchBar searchValue={searchValue} setsearchValue={setsearchValue}/>
+        <SearchBar />
       </div>
-      <MovieList movies={movies} addfav={addfav}/>
+      <MovieList />
       <div>
         <PageHeading heading={"favoraties"}/>
-      <Favoraties fav={fav} removeFav={removeFav}/> 
+      <Favoraties /> 
       </div>
-    </div>
+    </div> */}
+    </Usecontext>
   );
 }
 
