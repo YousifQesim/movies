@@ -14,6 +14,7 @@ export default function MovieList() {
   const {movies,removeFav,addfav,searchValue,setMovies} = useContext(context);
 // console.log(searchValue)
 // https://api.themoviedb.org/3/movie/{movie_id}?api_key=e7b12004b75308c7c4a6e84c00d2477e&language=en-US
+
   const api=`https://api.themoviedb.org/3/discover/movie?api_key=e7b12004b75308c7c4a6e84c00d2477e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
   useEffect(() => {
     fetch(api)
@@ -32,10 +33,9 @@ export default function MovieList() {
       
       
       
-      <div className='iteams' >
+      <div className='iteams' key={index}>
  
     <img src={`https://image.tmdb.org/t/p/original${
-
 movie.backdrop_path!==null
     ? movie.backdrop_path
     : [
@@ -56,9 +56,9 @@ movie.backdrop_path!==null
       <FaHeart className='dll'  
       
        style={{ color: isActive ? "red" : "white" }}
-        onClick={() => {
+        onClick={(id) => {
           {
-          isActive?  removeFav(movie):addfav(movie)
+          isActive? removeFav(movie):addfav(movie)
           }  ;
           handleClick();
         }}

@@ -3,7 +3,10 @@ import { useState,useEffect } from "react";
 import WatchLater from "../Pages/WatchLater";
 import Home from "../Pages/Home";
 import "./Navbar.css"
+import { useContext } from "react";
+import { context } from "../hooks/Usecontext";
 import SearchBar from "./SearchBar";
+
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
@@ -32,11 +35,15 @@ const Navbar = () => {
     <nav>
       {(toggleMenu || screenWidth > 500) && (
       <ul className="list">
-      <li className="items">Home</li>
-      <li className="items">Favoraties</li>
-      <li className="items">popular</li>
-      <li className="items">popular</li>
-      <li className="items">watched</li>
+      <  Link  to={`/`}>
+      <li className="items" >Home</li>
+      </Link>
+      <  Link  to={`/Favoraties`}>
+      <li className="items" >Favoraties</li>
+      </Link>
+      <  Link  to={`/watched`}>
+      <li className="items" >watched</li>
+      </Link>
       <SearchBar/>
     </ul>
       )}

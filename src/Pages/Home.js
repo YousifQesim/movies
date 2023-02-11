@@ -10,13 +10,13 @@ import "./Home.css"
 import { Outlet, Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import Select from '../components/Select';
-
+import Layout from '../Layout/Layout';
 const Home = (props) => {
   const {movies} = useContext(context);
 
   return (
     <div className="App">
-    <Navbar/>
+<Navbar/>
     <div className="poster">
                 <Carousel
                     showThumbs={false}
