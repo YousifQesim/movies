@@ -6,10 +6,29 @@ const Usecontext = (props) => {
   const [movies, setMovies] = useState([]);
   const [fav, setfav] = useState([]);
   const [searchValue, setsearchValue] = useState('');
+  const [category,setCategory]= useState("popular");
 
-//   const addfav = (movieid) => { 
-//     setfav( (prev)=>({...prev,[movieid]:prev[movieid]+1 }))
-//  }
+
+     const [cartIteam, setCartIteam] = useState(1);
+     const AddToCard = () => { 
+      if(cartIteam>500){
+        setCartIteam(500)
+      }
+      else{
+        setCartIteam( cartIteam+1)
+          }  
+   }
+ 
+   const RemoveFromCard = () => { 
+    if(cartIteam>1){
+  setCartIteam( cartIteam-1)
+    }
+    else{
+      setCartIteam(1)
+    }  
+
+ }
+ 
 const addfav=(movie)=>{
 const favoratiess=[...fav,movie];
 setfav(favoratiess);
@@ -36,7 +55,7 @@ console.log(e)
 }
 
 
-const values={movies,addfav,searchValue,setsearchValue,removeFav,fav,setMovies,popularMovies};
+const values={movies,addfav,searchValue,setsearchValue,removeFav,fav,setMovies,popularMovies,setCategory,category,AddToCard,RemoveFromCard,cartIteam};
   return (
     <context.Provider value={values}>
       {props.children}

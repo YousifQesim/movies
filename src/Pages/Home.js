@@ -11,6 +11,7 @@ import { Outlet, Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import Select from '../components/Select';
 import Layout from '../Layout/Layout';
+import ChangePages from '../components/ChangePages';
 const Home = (props) => {
   const {movies} = useContext(context);
 
@@ -64,6 +65,7 @@ const Home = (props) => {
   </div>
 
   <MovieList />
+  <ChangePages/>
   <div>
     <PageHeading heading={"favoraties"}/>
   <Favoraties /> 
