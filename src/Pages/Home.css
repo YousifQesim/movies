@@ -100,7 +100,7 @@ object-fit: cover;
   
 }
 .header{
-  border: 2px solid red;
+
   display: flex;
   height: 80px;
   justify-content: space-around;

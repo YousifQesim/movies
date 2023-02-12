@@ -65,9 +65,9 @@ const Home = (props) => {
   </div>
 
   <MovieList />
-  <ChangePages/>
+  <ChangePages />
   <div>
-    <PageHeading heading={"favoraties"}/>
+    {/* <PageHeading heading={"favoraties"}/> */}
   <Favoraties /> 
   </div>
 </div> 
