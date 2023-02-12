@@ -33,10 +33,6 @@ const addfav=(movie)=>{
 const favoratiess=[...fav,movie];
 setfav(favoratiess);
 }
-const removeFav=(movie)=>{
-  const remove=fav.filter((item)=>item.imdbID!==movie.imdbID)
-  setfav(remove);
-}
 const popularMovies= async(e)=>{
   e.preventDefault();
   console.log("searching");
@@ -55,7 +51,7 @@ console.log(e)
 }
 
 
-const values={movies,addfav,searchValue,setsearchValue,removeFav,fav,setMovies,popularMovies,setCategory,category,AddToCard,RemoveFromCard,cartIteam};
+const values={movies,addfav,searchValue,setsearchValue,fav,setMovies,popularMovies,setCategory,category,AddToCard,RemoveFromCard,cartIteam};
   return (
     <context.Provider value={values}>
       {props.children}
