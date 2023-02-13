@@ -6,13 +6,8 @@ import { FaStar,FaRegEye,FaHeart,FaBookReader } from "react-icons/fa";
 
 
 export default function MovieList() {
-  const [color, setColor] = useState("white");
-  // const [liked, setliked] = useState(false);
-  
-  const [isActive, setIsActive] = useState(false);
-
     
-    const {movies,removeFav,addfav,setMovies,category,AddToCard,RemoveFromCard,cartIteam,} = useContext(context);
+    const {movies,removeFav,addfav,setMovies,category,AddToCard,searchValue,cartIteam,} = useContext(context);
 
   const [newMoviews, setNewMoviews] = useState([{
     id: "",
@@ -37,7 +32,7 @@ export default function MovieList() {
     .then((response) => response.json())
     .then((actualData) =>setMovies(actualData.results));
   
-  },[setMovies, category, cartIteam, api]);
+  },[setMovies, category, cartIteam, searchValue,api]);
 
   function handleLike(id) {
   
@@ -95,7 +90,8 @@ export default function MovieList() {
         
       <div className='icons'>
       
-               
+               <div onClick={()=>{addfav(movie)}}>
+                
       <FaHeart className='dll'  
   
   style={{
@@ -107,6 +103,7 @@ export default function MovieList() {
 }    
 
         />
+               </div>
       <FaRegEye className='chaw'/>
       </div>
       </div>
