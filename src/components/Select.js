@@ -9,7 +9,7 @@ const Select = (props) => {
 
   return (
     
-      <div className="box">
+      <div className="box ">
       
   <select onChange={(e)=>{setCategory(e.target.value)}}>
   <option selected disabled>{props.movies}</option>

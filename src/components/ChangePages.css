@@ -14,7 +14,7 @@
   font-weight: 500;
   line-height: 20px;
   list-style: none;
-  padding: 6px 16px;
+  padding: 6px 18px;
   position: relative;
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   user-select: none;
@@ -24,8 +24,11 @@
   white-space: nowrap;
   word-wrap: break-word;
   margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+/* .prevv{display: flex;} */
 .button-4:hover {
   background-color: #F3F4F6;
   text-decoration: none;
@@ -73,8 +76,7 @@ background-color: white !important;
 color: #2B3467;
 }
 .ne_pre{
-  position: relative;
-  top: 2px;
+
   color: #22a6b3;
 }
 img{transition: all 0.5s;}

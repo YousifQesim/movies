@@ -11,7 +11,9 @@ const ChangePages = () => {
       
       <div className="changePages">
 
-<button className='button-4' onClick={RemoveFromCard} ><FcPrevious className='ne_pre'/>Previouse</button>
+<button className='button-4' onClick={RemoveFromCard} >
+  <FcPrevious className='ne_pre'/>Previouse
+  </button>
 <p className='button-4 p'><button type="" className='add' onClick={remBY5}>...</button> {cartIteam} <button type="" className='add' onClick={addBY5}>...</button></p>
 <button className='button-4'onClick={AddToCard} >Next <FcNext className='ne_pre'/></button>
 </div>

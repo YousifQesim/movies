@@ -5,11 +5,11 @@
 } */
 
 .box select {
-  background-color: #032541;
+  background-color: #009688;
   color: white;
   padding: 7px;
   width: 140px;
-  height: 31px;
+  height: 41px;
   border: none;
   font-size: 20px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
@@ -19,6 +19,7 @@
   border-radius: 15px;
   cursor: pointer;
   font-size: 13px;
+  font-weight: bold;
 }
 
 .box::before {

@@ -1,6 +1,6 @@
 import React,{useContext,useEffect} from 'react';
 import { context } from '../hooks/Usecontext';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar.js';
 import MovieList from '../components/MovieList';
 import Favoraties from '../components/Favoraties';
 import PageHeading from '../components/PageHeading';
@@ -13,7 +13,7 @@ import Select from '../components/Select';
 import Layout from '../Layout/Layout';
 import ChangePages from '../components/ChangePages';
 const Home = (props) => {
-  const {movies} = useContext(context);
+  const {movies,category} = useContext(context);
 
   return (
     <div className="App">
@@ -28,7 +28,7 @@ const Home = (props) => {
                 >
                     {
                         movies.map(movie => (
-                            <Link style={{textDecoration:"none",color:"white"}} to={`/movie/${movie.title}`} >
+                            <Link style={{textDecoration:"none",color:"white"}} to={`/${category}/${movie.id}`} >
                                 <div className="posterImage">
                                     <img src={`https://image.tmdb.org/t/p/original${movie.poster_path==null?movie.poster_path:movie.backdrop_path}`} />
                                 </div>
@@ -51,8 +51,8 @@ const Home = (props) => {
                                       <div className="posterImage__description">{movie ? movie.overview : ""}</div>
                                   </div>
                                 </div>
-                            
                             </Link>
+                            
                         ))
                     }
                 </Carousel>
@@ -63,8 +63,10 @@ const Home = (props) => {
   <PageHeading heading={"movieList"}/>
   <Select popular={"Popular"} movies={"Movies"} rated={"Rated"} lastest={"Lastest"} coming={"Up Coming"}/>
   </div>
-
+  
   <MovieList />
+
+
   <ChangePages />
   <div>
     {/* <PageHeading heading={"favoraties"}/> */}

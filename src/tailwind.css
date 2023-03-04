@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: #111827;
+}
+.navbar-scrolled {
+  background-color: #333;
+  color: #fff;
+}

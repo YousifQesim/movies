@@ -3,6 +3,8 @@ import Favoraties from './Favoraties'
 import "./Movies.css"
 import Usecontext, { context } from '../hooks/Usecontext';
 import { FaStar,FaRegEye,FaHeart,FaBookReader } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+import MovieDetail from './MovieDetail';
 
 
 export default function MovieList() {
@@ -26,7 +28,7 @@ export default function MovieList() {
   }, [movies])
   
 
-  const api=`https://api.themoviedb.org/3/movie/${category}?api_key=e7b12004b75308c7c4a6e84c00d2477e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${cartIteam}&with_watch_monetization_types=flatrate`
+  const api=`https://api.themoviedb.org/3/movie/${category}/?api_key=e7b12004b75308c7c4a6e84c00d2477e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${cartIteam}&with_watch_monetization_types=flatrate`
   useEffect(() => {
     fetch(api)
     .then((response) => response.json())
@@ -65,56 +67,58 @@ export default function MovieList() {
     
     
     <div className='movies'>
-    {    movies.map((movie,index)=>(
-      
-      
-      
-      <div className='iteams' key={index}>
- 
-    <img src={`https://image.tmdb.org/t/p/original${
-      movie.backdrop_path!==null
-      ? movie.backdrop_path
-      : [
-        movie.poster_path!==null
-        ?   movie.poster_path
-        :null
-      ]
-      // movie.poster_path==null?movie.backdrop_path:movie.poster_path
-    }`} style={{transition:"all 1s"}} />
-
+    {    movies.map((movie,index)=>{
+      return (
         
-          <div className="alltext ">
-          <div className="info">
-        <h1>{movie.original_title}</h1>
-        <div className='raiting'><p>{movie.vote_average}</p>  <FaStar className='starIcone'/> </div>
         
-      <div className='icons'>
-      
-               <div onClick={()=>{addfav(movie)}}>
-                
-      <FaHeart className='dll'  
-  
-  style={{
-    color: movie.liked ? "red" : "white",
-  }}
-  onClick={ 
-    movie.liked ? () => handleDislike(movie.id) : () => handleLike(movie.id)
-    
-}    
+        
+        <div className='iteams' key={index} >
 
-        />
-               </div>
-      <FaRegEye className='chaw'/>
-      </div>
-      </div>
-      </div>
-      </div>
-    
-    ))
+            <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path !== null
+              ? movie.backdrop_path
+              : [
+                movie.poster_path !== null
+                  ? movie.poster_path
+                  : null
+              ]
+              // movie.poster_path==null?movie.backdrop_path:movie.poster_path
+            }`} style={{ transition: "all 1s" }} />
+
+              
+            <div className="alltext ">
+              <div className="info">
+                <h1>{movie.original_title}</h1>
+                {/* <div className='raiting'><p>{movie.vote_average}</p>  <FaStar className='starIcone' /> </div> */}
+                <Link to={`/${category}/${movie.id}` }className='Link' >
+
+<button className="button-4">Read More</button>
+</Link>
+                {/* <div className='icons'>
+
+                  <div onClick={() => { addfav(movie); } } id="dll">
+
+                    <FaHeart className='dll'
+
+                      style={{
+                        color: movie.liked ? "red" : "white",
+                        
+                      }}
+                      onClick={movie.liked ? () => handleDislike(movie.id) : () => handleLike(movie.id)} />
+                  </div>
+                  <FaRegEye className='chaw' />
+                </div> */}
+              </div>
+            </div>
+          </div>
+
+      );
+    }
+    )
 }
 
 
     </div>
   
   )
+
 }

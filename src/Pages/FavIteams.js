@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar.js';
 import PageHeading from '../components/PageHeading';
 import Favoraties from '../components/Favoraties';
 const FavIteams = (props) => {
