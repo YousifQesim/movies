@@ -5,6 +5,7 @@ import Usecontext, { context } from '../hooks/Usecontext';
 import { FaStar,FaRegEye,FaHeart,FaBookReader } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import MovieDetail from './MovieDetail';
+import axios from 'axios';
 
 
 export default function MovieList() {
@@ -29,8 +30,18 @@ export default function MovieList() {
   
 
   const api=`https://api.themoviedb.org/3/movie/${category}/?api_key=e7b12004b75308c7c4a6e84c00d2477e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${cartIteam}&with_watch_monetization_types=flatrate`
+  // async function fetchData() {
+  //   try {
+  //     const response = await axios.get(api)
+  //     setUser(response.data)
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
+  
   useEffect(() => {
     fetch(api)
+    
     .then((response) => response.json())
     .then((actualData) =>setMovies(actualData.results));
   
