@@ -8,7 +8,8 @@ const MovieDetail = () => {
   const [detailed, SetDetailed] = useState([]);  
  
 
-  const api=`https://api.themoviedb.org/3/movie/${id}?api_key=e7b12004b75308c7c4a6e84c00d2477e&language=en-US`
+  const api=`https://api.themoviedb.org/3/movie/popular/?api_key=e7b12004b75308c7c4a6e84c00d2477e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
+  // const api=`https://api.themoviedb.org/3/movie/${id}?api_key=e7b12004b75308c7c4a6e84c00d2477e&language=en-US`
   useEffect(() => {
     fetch(api)
     .then((response) => response.json())
