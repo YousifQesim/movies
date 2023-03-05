@@ -40,10 +40,18 @@ export default function MovieList() {
   // }
   
   useEffect(() => {
-    fetch(api)
+
+    const fetchData = async () => {
+      const response = await fetch(api);
+      const json = await response.json();
+    setMovies(json.results);
+    };
+
+fetchData()
+    // fetch(api)
     
-    .then((response) => response.json())
-    .then((actualData) =>setMovies(actualData.results));
+    // .then((response) => response.json())
+    // .then((actualData) =>setMovies(actualData.results));
   
   },[setMovies, category, cartIteam, searchValue,api]);
 
