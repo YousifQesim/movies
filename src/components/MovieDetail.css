@@ -4,7 +4,7 @@
   display: flex;
   flex-direction:column;
   align-items: center;
-  background-color: #333;
+  background-color: #032541;
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
@@ -13,7 +13,6 @@
 
 .movie__intro {
   width: 100%;
-  border: 2px solid blue;
 }
 
 .movie__backdrop {
@@ -21,15 +20,13 @@
   height: 600px;
   object-fit:cover;
 margin: 0px;
-border: 2px solid red;
 }
 
 .movie__detail {
   align-items: center;
   width: 75%;
-  display: flex;
   position: relative;
-  bottom: 225px;
+  bottom: 475px;
 }
 
 .movie__detailLeft {
@@ -37,7 +34,7 @@ border: 2px solid red;
 }
 
 .movie__poster {
-  width:300px;
+  width:400px;
   height: 300px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.86) 0px 22px 40px 6px;
@@ -96,27 +93,26 @@ border: 2px solid red;
 }
 
 .movie__links {
-  position: relative;
-  bottom: 120px;
-  display: flex;
-  justify-content: space-between;
-  width: 75%;
+
+
 }
 
 .movie__heading {
   font-size: 2.2rem;
+  color: white;
 }
 
 .movie__Button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.8rem 2rem;
+  padding:8px;
   border-radius: 20px;
   cursor: pointer;
-  width: 150px;
-  color: black;
+  width: 120px;
+  color: white;
   font-weight: bold;
+  margin-top: 15px;
 }
 
 .movie__homeButton {
@@ -125,7 +121,14 @@ border: 2px solid red;
 }
 
 .movie__imdbButton {
+  border:2px solid #f3ce13;
+  transition: all 0.7s;
+
+}
+.movie__imdbButton:hover {
   background-color:#f3ce13;
+  color: black;
+  transition: all 0.7s;
 }
 
 .newTab {
@@ -133,17 +136,19 @@ border: 2px solid red;
 }
 
 .movie__production {
-  width: 85%;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  margin-bottom: 4rem;
+justify-content: center;
+
+  margin:0 auto;
+  color: white;
 }
 
 
 .movie__productionComapany {
   width: 200px;
   margin: 2rem;
+  color: wheat;
 }
 
 .productionCompanyImage {
@@ -151,4 +156,12 @@ border: 2px solid red;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: white;
+}
+
+.youtube1{
+  margin: 0 auto;
+  border-radius: 10px;
+
+  
 }

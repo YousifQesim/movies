@@ -61,7 +61,7 @@ const Home = (props) => {
   <div className='header'>
 
   <PageHeading heading={"movieList"}/>
-  <Select popular={"Popular"} movies={"Movies"} rated={"Rated"} lastest={"Lastest"} coming={"Up Coming"}/>
+  <Select popular={"Popular"} movies={"Movies"} rated={"Rated"} lastest={"Lastest"} coming={"Up Coming"} className="select"/>
   </div>
   
   <MovieList />

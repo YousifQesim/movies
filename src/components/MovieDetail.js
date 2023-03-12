@@ -1,6 +1,9 @@
 import {useEffect,useState} from 'react';
 import { useParams } from 'react-router-dom';
 import "./MovieDetail.css"
+import MovieTrailerButton from './MovieTrailerButton';
+import { FaExternalLinkAlt } from "react-icons/fa";
+import Navbar from './Navbar'
 const MovieDetail = () => {
   const {id}=useParams();
   
@@ -8,8 +11,8 @@ const MovieDetail = () => {
   const [detailed, SetDetailed] = useState([]);  
  
 
-  const api=`https://api.themoviedb.org/3/movie/popular/?api_key=e7b12004b75308c7c4a6e84c00d2477e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
-  // const api=`https://api.themoviedb.org/3/movie/${id}?api_key=e7b12004b75308c7c4a6e84c00d2477e&language=en-US`
+  // const api=`https://api.themoviedb.org/3/movie/popular/?api_key=e7b12004b75308c7c4a6e84c00d2477e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
+  const api=`https://api.themoviedb.org/3/movie/${id}?api_key=e7b12004b75308c7c4a6e84c00d2477e&language=en-US`
   useEffect(() => {
     
     fetch(api)
@@ -21,11 +24,12 @@ const MovieDetail = () => {
 
   return (
     <div>
+      <Navbar/>
      <div className="movie">
             <div className="movie__intro">
                 <img className="movie__backdrop" src={`https://image.tmdb.org/t/p/original${detailed ? detailed.backdrop_path : ""}`} />
             </div>
-            <div className="movie__detail">
+            <div className="movie__detail md:flex block justify-center">
                 <div className="movie__detailLeft">
                     <div className="movie__posterBox">
                         <img className="movie__poster" src={`https://image.tmdb.org/t/p/original${detailed ? detailed.poster_path : ""}`} />
@@ -53,6 +57,12 @@ const MovieDetail = () => {
                             }
                         </div>
                     </div>
+            <div className="movie__links">
+                {
+                    detailed && detailed.imdb_id && <a href={"https://www.imdb.com/title/" + detailed.imdb_id} target="_blank" style={{textDecoration: "none"}}><p><span className="movie__imdbButton movie__Button">IMDb<FaExternalLinkAlt className='relative left-2 bottom-0.4'/></span></p></a>
+                }
+                
+            </div>
                     <div className="movie__detailRightBottom">
                         <div className="synopsisText">Synopsis</div>
                         <div>{detailed ? detailed.overview : ""}</div>
@@ -60,17 +70,14 @@ const MovieDetail = () => {
                     
                 </div>
             </div>
-            <div className="movie__links">
-                <div className="movie__heading">Useful Links</div>
-                {
-                    detailed && detailed.homepage && <a href={detailed.homepage} target="_blank" style={{textDecoration: "none"}}><p><span className="movie__homeButton movie__Button">Homepage <i className="newTab fas fa-external-link-alt"></i></span></p></a>
-                }
-                {
-                    detailed && detailed.imdb_id && <a href={"https://www.imdb.com/title/" + detailed.imdb_id} target="_blank" style={{textDecoration: "none"}}><p><span className="movie__imdbButton movie__Button">IMDb<i className="newTab fas fa-external-link-alt"></i></span></p></a>
-                }
-            </div>
-            <div className="movie__heading">Production companies</div>
-            <div className="movie__production">
+            <div className='relative bottom-80'>
+
+        <div className='youtube'>
+
+            <MovieTrailerButton />
+        </div>
+            <div className="movie__heading text-center my-20">Production companies</div>
+            <div className="movie__production flex justify-center">
                 {
                     detailed && detailed.production_companies && detailed.production_companies.map(company => (
                         <>
@@ -85,6 +92,7 @@ const MovieDetail = () => {
                         </>
                     ))
                 }
+            </div>
             </div>
         </div>
     </div>

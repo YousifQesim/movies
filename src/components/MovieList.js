@@ -112,7 +112,7 @@ fetchData()
 
 <button className="button-4">Read More</button>
 </Link>
-                {/* <div className='icons'>
+                <div className='icons'>
 
                   <div onClick={() => { addfav(movie); } } id="dll">
 
@@ -125,7 +125,7 @@ fetchData()
                       onClick={movie.liked ? () => handleDislike(movie.id) : () => handleLike(movie.id)} />
                   </div>
                   <FaRegEye className='chaw' />
-                </div> */}
+                </div>
               </div>
             </div>
           </div>
