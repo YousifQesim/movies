@@ -45,7 +45,7 @@ const MovieDetail = () => {
                         </div>  
                         <div className="movie__runtime">{detailed ? detailed.runtime + " mins" : ""}</div>
                         <div className="movie__releaseDate">{detailed ? "Release date: " + detailed.release_date : ""}</div>
-                        <div className="movie__genres">
+                        <div className="movie__genres flex flex-wrap">
                             {
                                 detailed && detailed.genres
                                 ? 
