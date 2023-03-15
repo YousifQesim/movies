@@ -55,6 +55,11 @@ const Navbar = ({  backgroundColor, color }) => {
     color: scrolled ? color : '#fff',
     transition: 'all 0.3s ease-in-out'
   };
+  const navbarStyles1 = {
+  
+    color: !scrolled ? color : '#032541',
+    transition: 'all 0.3s ease-in-out'
+  };
   return (
     <> <nav className="w-full bg-white shadow " style={navbarStyles}>
     <div className="justify-between  mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
@@ -119,16 +124,17 @@ const Navbar = ({  backgroundColor, color }) => {
               
             >
               <ul className="items-center w-auto text-MainColor font-bold justify-center  space-y-2 space-x-2 md:flex space-x-0 md:space-x-6 md:space-y-0" style={navbarStyles}>
-<LogoutButton/>
+
                {links.map(item => (
                     <li className=" hover:text-teal-500 hover:transition-all hover:ease-in-out  ">
-          
                 <Link to={item.link}>{item.name}</Link>
 
                 </li>
 
 
 ))}
+
+<LogoutButton />
               
 </ul>
               

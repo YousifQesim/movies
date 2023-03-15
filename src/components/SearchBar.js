@@ -19,23 +19,28 @@ export default function SearchBar() {
     }
   }
   const [opacity, Setopacity] = useState(0);
-  const changeDesign = () => {
-    Setopacity(opacity === 0? 1 : 0);
-  };
+
 
   return (
     <div>
+      <form action="" onSubmit={searchMovie}>
 
-   <form id="search-form" role="search" onSubmit={searchMovie} onClick={changeDesign}>
-        <div className="search-box">
-  <button className="btn-search" >
-    <FaSearch className="fas fa-search"  />
-  </button>
-  <input type="text"  value={searchValue} onChange={(event)=>{setsearchValue(event.target.value)}} className="input-search" placeholder="Type to Search..." />
-<MdClear className='button' onClick={() => setsearchValue('')} style={{color:"red",opacity:opacity}}/>
-</div>
-    
-        </form>
+ <div className="flex items-center">
+            <div className="flex  rounded">
+                <input
+                 value={searchValue} onChange={(event)=>{setsearchValue(event.target.value)}}
+                 type="text"
+                    className="block w-full px-4 py-2 text-black font-bold bg-white border rounded-md focus:border-teal-400 focus:ring-teal-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder="Search..."
+                    />
+                <button className="px-4 text-white bg-teal-700 border-l rounded ">
+                    Search
+                </button>
+            </div>
+        </div>
+
+        
+                    </form>
     </div>
   )
 }

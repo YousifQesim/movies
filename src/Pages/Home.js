@@ -11,7 +11,7 @@ import { FaStar } from "react-icons/fa";
 import Select from '../components/Select';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import SearchBar from '../components/SearchBar';
 import ChangePages from '../components/ChangePages';
 const Home = (props) => {
   const {movies,category} = useContext(context);
@@ -64,6 +64,10 @@ const Home = (props) => {
 
   <PageHeading heading={"movieList"}/>
   <Select popular={"Popular"} movies={"Movies"} rated={"Rated"} lastest={"Lastest"} coming={"Up Coming"} className="select"/>
+  </div>
+  <div  className='block mx-auto w-full  flex justify-center my-5'>
+
+  <SearchBar className='' />
   </div>
   
   <MovieList />

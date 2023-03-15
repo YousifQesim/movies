@@ -1,4 +1,4 @@
-
+/* 
 .search-box{
   width: fit-content;
   height: fit-content;
@@ -53,12 +53,12 @@
   border-bottom:1px solid rgba(255,255,255,.5);
   transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 } 
-/* .container{
+.container{
   position: relative;
 }
 input {
   paddingRight: 30px;
-} */
+}
 .button {
   position: absolute;
   right: 40px;
@@ -71,4 +71,4 @@ input {
   text-align: center;
   cursor: pointer;
 opacity: 0;
-}
+} */

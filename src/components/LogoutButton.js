@@ -29,8 +29,8 @@ export const LogoutButton = (props) => {
   }
 
   return (
-    <div>
-      <button className="bg-white text-MainColor" onClick={logout}> Logout </button>
+    <div >
+      <button onClick={logout} className='hover:text-teal-500 hover:transition-all hover:ease-in-out'> Logout </button>
     </div>
   );
 };
