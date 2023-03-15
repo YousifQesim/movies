@@ -1,5 +1,6 @@
 import React,{useContext,useState} from 'react';
-import "./Select.css";
+import "../components/styles/Select.css"
+
 import { context } from '../hooks/Usecontext';
 import { Link } from 'react-router-dom';
 

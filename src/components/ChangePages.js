@@ -2,7 +2,7 @@ import React,{useContext} from 'react';
 import Usecontext, { context } from '../hooks/Usecontext';
 import { FcPrevious,FcNext } from "react-icons/fc";
 
-import "./ChangePages.css"
+import "../components/styles/ChangePages.css"
 
 const ChangePages = () => {
   const {cartIteam,RemoveFromCard,AddToCard,addBY5,remBY5} = useContext(context);

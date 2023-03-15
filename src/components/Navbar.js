@@ -2,7 +2,9 @@ import { Outlet, Link } from "react-router-dom";
 import { useState,useEffect } from "react";
 import WatchLater from "../Pages/WatchLater";
 import Home from "../Pages/Home";
-import "./Navbar.css"
+import "../components/styles/Navbar.css"
+import { LogoutButton } from "./LogoutButton";
+
 import { useContext } from "react";
 import { context } from "../hooks/Usecontext";
 import SearchBar from "./SearchBar";
@@ -31,7 +33,7 @@ const Navbar = ({  backgroundColor, color }) => {
   const links =[
     {name:"HOME",link:"/"},
     {name:"Favoraties",link:"/Favoraties"},
-    {name:"watched",link:"/watched"},
+    {name:"watched",link:"/WatchLater"},
   ];
 
   useEffect(() => {
@@ -112,11 +114,12 @@ const Navbar = ({  backgroundColor, color }) => {
             <div
             
                 className={` justify-self-center m-0 relative bottom-1.5 bg-white w-auto  md:block md:pb-0 md:mt-0 ${
-                    navbar ? "block" : "hidden"
+                  navbar ? "block" : "hidden"
                 }`}
               
             >
               <ul className="items-center w-auto text-MainColor font-bold justify-center  space-y-2 space-x-2 md:flex space-x-0 md:space-x-6 md:space-y-0" style={navbarStyles}>
+<LogoutButton/>
                {links.map(item => (
                     <li className=" hover:text-teal-500 hover:transition-all hover:ease-in-out  ">
           

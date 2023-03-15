@@ -1,13 +1,29 @@
-import React,{useContext} from 'react'
-import MovieList from '../components/MovieList'
-import Usecontext, { context } from '../hooks/Usecontext';
-import Navbar from '../components/Navbar.js';
-export default function WatchLater() {
-  const {movies,addfav,searchValue,setsearchValue,removeFav,fav} = useContext(context);
-  return (
-    <div>
-<Navbar/>
 
-    </div>
-  )
+import PageHeading from '../components/PageHeading';
+import Navbar from '../components/Navbar';
+import "./Home.css"
+import Watched from '../components/Watched';
+
+
+import ChangePages from '../components/ChangePages';
+const WatchLater = (props) => {
+
+
+  return (
+<div>
+  <div>
+    
+  <Navbar/>
+  </div>
+
+<div className='my-20'>
+
+  <PageHeading heading={"Watched"} className='my-30'/>
+</div>
+<Watched/>
+</div>
+
+  );
 }
+
+export default WatchLater;

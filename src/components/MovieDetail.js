@@ -1,6 +1,6 @@
 import {useEffect,useState} from 'react';
 import { useParams } from 'react-router-dom';
-import "./MovieDetail.css"
+import "../components/styles/MovieDetail.css"
 import MovieTrailerButton from './MovieTrailerButton';
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Navbar from './Navbar'

@@ -7,7 +7,10 @@ const FavIteams = (props) => {
     <div>
     <Navbar/>
     <div>
-    <PageHeading heading={"movieList"}/>
+    <div className='my-20'>
+
+  <PageHeading heading={"Favoraties"} className='my-30'/>
+</div>
   <Favoraties /> 
   </div>
     </div>

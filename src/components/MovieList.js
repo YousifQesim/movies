@@ -1,6 +1,6 @@
 import React,{useEffect, useState,useContext} from 'react'
 import Favoraties from './Favoraties'
-import "./Movies.css"
+import "../components/styles/Movies.css"
 import Usecontext, { context } from '../hooks/Usecontext';
 import { FaStar,FaRegEye,FaHeart,FaBookReader } from "react-icons/fa";
 import { Link } from 'react-router-dom';
@@ -10,7 +10,7 @@ import axios from 'axios';
 
 export default function MovieList() {
     
-    const {movies,removeFav,addfav,setMovies,category,AddToCard,searchValue,cartIteam,} = useContext(context);
+    const {movies,watchstate,addfav,setMovies,category,addtowatch,searchValue,cartIteam,} = useContext(context);
 
   const [newMoviews, setNewMoviews] = useState([{
     id: "",
@@ -81,7 +81,7 @@ fetchData()
     })
     setMovies(newMovies)
   }
-  
+
   return (
     
     
@@ -124,7 +124,10 @@ fetchData()
                       }}
                       onClick={movie.liked ? () => handleDislike(movie.id) : () => handleLike(movie.id)} />
                   </div>
-                  <FaRegEye className='chaw' />
+                  <div >
+
+                  <FaRegEye className='chaw' onClick={() => { addtowatch(movie); } }/>
+                  </div>
                 </div>
               </div>
             </div>

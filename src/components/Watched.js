@@ -3,10 +3,10 @@ import "../components/styles/Movies.css"
 import Usecontext, { context } from '../hooks/Usecontext';
 import { Link } from 'react-router-dom';
 import { FaStar,FaRegEye,FaHeart,FaBookReader } from "react-icons/fa";
-export default function Favoraties(props) {
+export default function Watched(props) {
 
   
-const {movies,addfav,setMovies,removieFav,fav,category} = useContext(context);
+const {watchstate,removieInWatch,setwatch,movies,addfav,setMovies,removieFav,fav,category} = useContext(context);
 function handleLike(id) {
   
   const newMovies = movies.map((movie) => {
@@ -37,7 +37,7 @@ return (
     
     
   <div className='movies my-10'>
-  {   fav&& fav.map((movie,index)=>(
+  {   watchstate&& watchstate.map((movie,index)=>(
     
     
     <div className='iteams' key={index} >
@@ -73,7 +73,10 @@ return (
               }}
               onClick={movie.liked ? () => handleDislike(movie.id) : () => handleLike(movie.id)} />
           </div>
+          <div  onClick={() => { removieInWatch(movie); } }>
+            
           <FaRegEye className='chaw' />
+          </div>
         </div>
       </div>
     </div>
@@ -86,3 +89,5 @@ return (
 
 )
 }
+
+

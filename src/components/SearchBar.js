@@ -1,6 +1,6 @@
 import React,{useContext,useState} from 'react'
 import Usecontext, { context } from '../hooks/Usecontext'
-import "./SearchBar.css"
+import "../components/styles/SearchBar.css"
 import { FaSearch} from "react-icons/fa";
 import { MdClear } from "react-icons/md";
 export default function SearchBar() {
