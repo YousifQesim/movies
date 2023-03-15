@@ -36,21 +36,24 @@ const Home = (props) => {
                                 </div>
                                                        
                               <div className="posterImage__overlay">
-                                  <div className="smallImage">
+                                  <div className="smallImage  lg:block hidden">
                                   <img src={`https://image.tmdb.org/t/p/original${movie.poster_path==null?movie.poster_path:movie.backdrop_path}`} />
 
                                   </div>
                                 <div className='texts'>
-                                      <div className="posterImage__title">{movie ? movie.original_title: ""}</div>  
+                                      <div className="font-black lg:text-6xl md:4xl text-2xl mb-2 text-center">{movie ? movie.original_title: ""}</div>  
                                       <div className="posterImage__runtime">
                                           {movie ? movie.release_date : ""}
-                                          <span className="posterImage__rating">
-                                              <FaStar className={"starIcone"}/>
-                                              {movie ? movie.vote_average :""}
+                                          <div className='flex justify-center'>
                                             
-                                          </span>
+                                        
+                                              {movie ? movie.vote_average :""}
+                                              <FaStar className={"starIcone"}/>
+                                            
+                                    
+                                          </div>
                                       </div>
-                                      <div className="posterImage__description">{movie ? movie.overview : ""}</div>
+                                      <div className="posterImage__description lg:block hidden">{movie ? movie.overview : ""}</div>
                                   </div>
                                 </div>
                             </Link>
