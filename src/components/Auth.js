@@ -41,7 +41,7 @@ export const Auth = (props) => {
 
 <button  onClick={signInWithGoogle} class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 px-4 rounded w-48 mt-5">
 Sign In With Google
-</button>
+</button> 
     </div>
   );
 };
