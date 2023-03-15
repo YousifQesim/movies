@@ -36,12 +36,12 @@ export const Auth = (props) => {
   };
 
   return (
-    <div>
-  
+    <div className="flex flex-col justify-center items-center h-screen">
+    <h1 class="text-3xl font-bold mb-4 text-white block mx-auto text-center">Get Started with Movies4Kurd: Sign In to Continue</h1>
 
-      <button className="bg-white" onClick={signInWithGoogle}> Sign In With Google</button>
-
-      <button className="bg-white" onClick={logout}> Logout </button>
+<button  onClick={signInWithGoogle} class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 px-4 rounded w-48 mt-5">
+Sign In With Google
+</button>
     </div>
   );
 };
