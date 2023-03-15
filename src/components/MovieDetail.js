@@ -50,7 +50,7 @@ const MovieDetail = () => {
                                 detailed && detailed.genres
                                 ? 
                                 detailed.genres.map(genre => (
-                                    <><span className="movie__genre my-3" id={genre.id}>{genre.name}</span></>
+                                    <><span className="movie__genre my-1" id={genre.id}>{genre.name}</span></>
                                 )) 
                                 : 
                                 ""
@@ -65,7 +65,7 @@ const MovieDetail = () => {
             </div>
                     <div className="movie__detailRightBottom">
                         <div className="synopsisText">Synopsis</div>
-                        <div>{detailed ? detailed.overview : ""}</div>
+                        <div className='font-sans'>{detailed ? detailed.overview : ""}</div>
                     </div>
                     
                 </div>
