@@ -27,9 +27,9 @@ const MovieDetail = () => {
       <Navbar/>
      <div className="movie">
             <div className="movie__intro">
-                <img className="movie__backdrop" src={`https://image.tmdb.org/t/p/original${detailed ? detailed.backdrop_path : ""}`} />
+                <img className="movie__backdrop opacity-50" src={`https://image.tmdb.org/t/p/original${detailed ? detailed.backdrop_path : ""}`} />
             </div>
-            <div className="movie__detail md:flex block justify-center">
+            <div className="movie__detail xl:flex block justify-center">
                 <div className="movie__detailLeft">
                     <div className="movie__posterBox">
                         <img className="movie__poster" src={`https://image.tmdb.org/t/p/original${detailed ? detailed.poster_path : ""}`} />
@@ -70,14 +70,14 @@ const MovieDetail = () => {
                     
                 </div>
             </div>
-            <div className='relative bottom-80'>
+            <div className='md:relative md:bottom-80'>
 
-        <div className='youtube'>
+        <div className='my-20'>
 
-            <MovieTrailerButton />
+            <MovieTrailerButton className='' />
         </div>
             <div className="movie__heading text-center my-20">Production companies</div>
-            <div className="movie__production flex justify-center">
+            <div className="movie__production flex justify-center flex-wrap">
                 {
                     detailed && detailed.production_companies && detailed.production_companies.map(company => (
                         <>

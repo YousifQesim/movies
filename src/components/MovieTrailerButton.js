@@ -25,7 +25,7 @@ const API_KEY='e7b12004b75308c7c4a6e84c00d2477e'
         <iframe
         className='youtube1   '
           title="Movie Trailer"
-        width="500"
+        width="400"
           height="315"
           src={trailerUrl}
           frameBorder="0"
