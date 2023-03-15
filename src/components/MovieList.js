@@ -29,7 +29,7 @@ export default function MovieList() {
   }, [movies])
   
 const api2=`https://api.themoviedb.org/3/movie/popular?api_key=e7b12004b75308c7c4a6e84c00d2477e&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_watch_monetization_types=flatrate`
-  const api=`https://api.themoviedb.org/3/movie/${category}/?api_key=e7b12004b75308c7c4a6e84c00d2477e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${cartIteam}&with_watch_monetization_types=flatrate`
+  const api=`https://api.themoviedb.org/3/movie/${category}?api_key=e7b12004b75308c7c4a6e84c00d2477e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${cartIteam}&with_watch_monetization_types=flatrate`
   // async function fetchData() {
   //   try {
   //     const response = await axios.get(api)
@@ -42,7 +42,7 @@ const api2=`https://api.themoviedb.org/3/movie/popular?api_key=e7b12004b75308c7c
   useEffect(() => {
 
     const fetchData = async () => {
-      const response = await fetch(api2);
+      const response = await fetch(api);
       const json = await response.json();
     setMovies(json.results);
     };
